@@ -1,6 +1,47 @@
 {
   "cSpell.words": [
     "Pinia",
+    "smacss",
+    "stylelint",
     "unplugin"
-  ]
+  ],
+  // eslint配置
+  "javascript.validate.enable": false,
+  "eslint.format.enable": true,
+  "eslint.validate": [
+    "vue",
+    "javascript",
+    "javascriptreact",
+    "html"
+  ],
+  // stylelint配置
+  "css.validate": false,
+  "scss.validate": false,
+  "less.validate": false,
+  "stylelint.enable": true,
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "vue"
+  ],
+  "stylelint.snippet": [
+    "css",
+    "scss",
+    "vue"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "path-intellisense.mappings": {
+    "@api": "${workspaceRoot}/src/api",
+    "@assets": "${workspaceRoot}/src/assets",
+    "@components": "${workspaceRoot}/src/components",
+    "@datasets": "${workspaceRoot}/src/datasets",
+    "@directives": "${workspaceRoot}/src/directives",
+    "@interface": "${workspaceRoot}/src/interface",
+    "@store": "${workspaceRoot}/src/store",
+    "@styles": "${workspaceRoot}/src/styles",
+    "@utils": "${workspaceRoot}/src/utils"
+  }
 }
