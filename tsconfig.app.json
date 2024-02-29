@@ -7,8 +7,15 @@
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
 
     "baseUrl": ".",
+    "types": ["element-plus/global"],
     "paths": {
-      "@/*": ["./src/*"]
+      "@assets/*": [ "./src/assets/*" ],
+      "@components/*": [ "./src/components/*" ],
+      "@store/*": [ "./src/store/*" ],
+      "@directives/*": [ "./src/directives/*" ],
+      "@datasets/*": [ "./src/datasets/*" ],
+      "@styles/*": [ "./src/styles/*" ],
+      "@utils/*": [ "./src/utils/*" ]
     }
   }
 }
