@@ -40,7 +40,7 @@
     "@datasets": "${workspaceRoot}/src/datasets",
     "@directives": "${workspaceRoot}/src/directives",
     "@interface": "${workspaceRoot}/src/interface",
-    "@store": "${workspaceRoot}/src/store",
+    "@stores": "${workspaceRoot}/src/stores",
     "@styles": "${workspaceRoot}/src/styles",
     "@utils": "${workspaceRoot}/src/utils"
   }

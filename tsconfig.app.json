@@ -9,11 +9,13 @@
     "baseUrl": ".",
     "types": ["element-plus/global"],
     "paths": {
+      "@api/*": [ "./src/api/*" ],
       "@assets/*": [ "./src/assets/*" ],
       "@components/*": [ "./src/components/*" ],
-      "@store/*": [ "./src/store/*" ],
-      "@directives/*": [ "./src/directives/*" ],
       "@datasets/*": [ "./src/datasets/*" ],
+      "@directives/*": [ "./src/directives/*" ],
+      "@interface/*": [ "./src/interface/*" ],
+      "@stores/*": [ "./src/stores/*" ],
       "@styles/*": [ "./src/styles/*" ],
       "@utils/*": [ "./src/utils/*" ]
     }

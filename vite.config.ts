@@ -1,5 +1,6 @@
 import { fileURLToPath, URL } from 'node:url'
 
+import autoprefixer from 'autoprefixer'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
@@ -9,9 +10,14 @@ import viteCompression from 'vite-plugin-compression'
 // https://vitejs.dev/config/
 export default defineConfig({
   css: {
+    postcss: {
+      plugins: [
+        autoprefixer
+      ]
+    },
     preprocessorOptions: {
       scss: {
-        additionalData: '@import "./src/styles/variables.scss";' // 添加公共样式
+        additionalData: '@use "./src/styles/variables.scss" as *;' // 添加公共样式
       }
     }
   },
@@ -34,24 +40,34 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@api': fileURLToPath(new URL('./src/api', import.meta.url)),
       '@assets': fileURLToPath(new URL('./src/assets', import.meta.url)),
       '@components': fileURLToPath(new URL('./src/components', import.meta.url)),
       '@datasets': fileURLToPath(new URL('./src/datasets', import.meta.url)),
       '@directives': fileURLToPath(new URL('./src/directives', import.meta.url)),
-      '@store': fileURLToPath(new URL('./src/store', import.meta.url)),
+      '@interface': fileURLToPath(new URL('./src/interface', import.meta.url)),
+      '@stores': fileURLToPath(new URL('./src/stores', import.meta.url)),
       '@styles': fileURLToPath(new URL('./src/styles', import.meta.url)),
       '@utils': fileURLToPath(new URL('./src/utils', import.meta.url))
     }
   },
   server: {
+    host: '127.0.0.1',
     port: 8205,
+    strictPort: true,
     open: 'https://local-turnip-price.triangleclub.top',
     proxy: {
       '/api': {
-        target: 'https://api.triangleclub.top',
+        secure: false,
         changeOrigin: true,
+        target: 'https://local-api.triangleclub.top'
       }
     },
-    hmr: true
+    hmr: {
+      host: 'local-turnip-price.triangleclub.top',
+      port: 8205,
+      clientPort: 443,
+      protocol: 'wss'
+    }
   }
 })
