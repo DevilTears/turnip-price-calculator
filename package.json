@@ -1,6 +1,6 @@
 {
   "name": "vue-project",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -40,6 +40,7 @@
     "eslint-plugin-vue": "^9.22.0",
     "npm-run-all2": "^6.1.2",
     "postcss-html": "^1.6.0",
+    "postcss-import": "^16.0.1",
     "postcss-scss": "^4.0.9",
     "prettier": "^3.2.5",
     "sass": "^1.71.1",

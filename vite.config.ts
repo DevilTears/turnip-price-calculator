@@ -6,9 +6,11 @@ import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import viteCompression from 'vite-plugin-compression'
+import packageInfo from './package.json'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/turnip-price/',
   css: {
     postcss: {
       plugins: [
@@ -20,6 +22,9 @@ export default defineConfig({
         additionalData: '@use "./src/styles/variables.scss" as *;' // 添加公共样式
       }
     }
+  },
+  define: {
+    VITE_APP_VERSION: JSON.stringify(packageInfo.version)
   },
   plugins: [
     Components({
@@ -55,7 +60,7 @@ export default defineConfig({
     host: '127.0.0.1',
     port: 8205,
     strictPort: true,
-    open: 'https://local-turnip-price.triangleclub.top',
+    open: 'https://local-turnip-price.triangleclub.top/turnip-price/',
     proxy: {
       '/api': {
         secure: false,

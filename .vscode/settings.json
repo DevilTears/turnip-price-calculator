@@ -3,7 +3,8 @@
     "Pinia",
     "smacss",
     "stylelint",
-    "unplugin"
+    "unplugin",
+    "VITE"
   ],
   // eslint配置
   "javascript.validate.enable": false,
